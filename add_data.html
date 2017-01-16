@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Add Data</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="header">
+		<div class="clearfix">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="LOGO" height="52" width="362"></a>
+			</div>
+			<ul class="navigation">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="practices.html">Practices</a>
+				</li>
+				<li class="active">
+					<a href="lawyers.html">Our Lawyers</a>
+				</li>
+				<li>
+					<a href="news.html">News</a>
+					<div>
+						<a href="singlepost.html">News Single Post</a>
+					</div>
+				</li>
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="contents">
+		<div class="clearfix">
+			<div class="main">
+				<h1>Add or Create Data</h1>
+        <p>
+          Here we describe in detail our data collection process, from image capture to 
+          final labeling. However, you may only want to add annotations in our data for
+          a specific instance or two.  It is easy to label a new instance in a scene.
+          What do you want to do?
+        <ul>
+          <li> <a href="#image_collection">Image Collection</a>
+          <li> <a href="#scene_reconstruction">Scene Reconstruction</a>
+          <li> <a href="#labeling">Labeling a Single Instance</a> 
+        </ul> 
+        </p>
+				<div class="section">
+					<h2 id="image_collection">Image Collection</h2>
+            <p>
+            We describe our process in detail in our <a href=''>paper</a>.          
+            Essentially we place an imaginary grid over the scene, with a distance of
+            .3 meters between each vertex. At each vertex, we sample every 30 degrees
+            in a full rotation, resulting in 12 RGBD images per vertex. We visit as many
+            vertices as the size of our robot allows.
+					  <img src="images/scene_grid.jpg" alt="Img" height="300" width="300">
+             If we enter a room, we scan the entire room. We try to avoid situations where
+             images show a room that can be entered, but we do not scan it. Sometimes
+             this is unavoidable(not every doorway has a door to close), but we do 
+             the best we can.
+		
+
+            </p>
+            <p>
+              It is not uncommon for a few collected images to be 'bad'. There may be 
+              duplicates if the robot got stuck and did not rotate, etc. These are removed 
+              all images renamed so that the largest image name index is equal to
+              the total number of images. 
+            </p>
+				</div>
+				<div class="section">
+					<h2 id="scene_reconstruction">Scene Reconstruction</h2>
+            <p>After the images are collected, we perform a 2-step reconstruction.</p> 
+      
+            <h3> Sparse Reconstruction (COLMAP) </h3> 
+            <p>
+              We obtain a sparse reconstruction, including camera positions and orientations,
+              using the RGB structure for motion tool
+              <a href="http://people.inf.ethz.ch/jschoenb/colmap/">COLMAP</a>. We also
+              export undistorted images for the next step, dense reconstruction. 
+            </p> 
+            <p> Note: Not all images will be reconstructed by colmap. In practice however,
+                at least two images in each cluster(vertex) are reconstructed. Positions
+                and orientations of the non-reconstructed images can then be interpolated
+                using their image indices. 
+            </p>
+ 
+            <h3> Dense Reconstruction (CMVS/PMVS) </h3> 
+            <p>
+              Since we use the 3D  point cloud for labeling, we get a denser cloud using 
+              <a href="https://www.di.ens.fr/cmvs/">CMVS/PMVS</a>. To get a denser 
+              reconstruction we often run CMVS to get small groups of ~200 images, 
+              then run PMVS on each of those.  We then do the same on groups of ~500 images.
+              We then merge all of these models for a single dense reconstruction. 
+            </p> 
+            <p>
+              Note: COLMAP 2.0 now has a dense reconstruction feature. We chose not to use this
+              as our pipleine was already setup using CMVS/PMVS.
+            </p>
+				</div>
+				<div class="section">
+					<h2 id="labeling">Labeling a Single Instance</h2>
+          <p>
+            This section details how to label a single object instance in all images in a scene.
+            There are X steps:
+            <ul>
+              <li>Segment objects point cloud from dense reconstruction</li> 
+              <li>Automatically generate bounding boxes by projecting object
+                    point cloud into images
+              </li> 
+              <li> Adjust automatic bounding boxes for tightness and occlusion  </li> 
+              <li> Hand label images that were not reconstructed</li> 
+            </ul>
+          </p> 
+      
+          <p>
+            
+          </p>
+ 
+				</div>
+				<div class="section last-child">
+					<h2>Associates</h2>
+					<ul>
+						<li>
+							<div class="frame4">
+								<div class="box">
+									<img src="images/thumbnail-frontview.jpg" alt="Img" height="94" width="90">
+								</div>
+							</div>
+							<p>
+								<b>Denise M. Silvia</b> This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.You can remove any link to our website from this website template.
+							</p>
+						</li>
+						<li>
+							<div class="frame4">
+								<div class="box">
+									<img src="images/thumbnail-happy.jpg" alt="Img" height="94" width="90">
+								</div>
+							</div>
+							<p>
+								<b>Nancy R. Bakken</b> You're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forums.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="clearfix">
+			<div class="section">
+				<h4>Latest News</h4>
+				<p>
+					This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link.
+				</p>
+			</div>
+			<div class="section contact">
+				<h4>Contact Us</h4>
+				<p>
+					<span>Address:</span> the address city, state 1111
+				</p>
+				<p>
+					<span>Phone:</span> (+20) 000 222 999
+				</p>
+				<p>
+					<span>Email:</span> info@freewebsitetemplates.com
+				</p>
+			</div>
+			<div class="section">
+				<h4>SEND US A MESSAGE</h4>
+				<p>
+					If you're having problems editing this website template, then don't hesitate to ask for help on the Forums.
+				</p>
+				<a href="http://www.freewebsitetemplates.com/misc/contact/" class="subscribe">Click to send us an email</a>
+			</div>
+		</div>
+		<div id="footnote">
+			<div class="clearfix">
+				<div class="connect">
+					<a href="http://freewebsitetemplates.com/go/facebook/" class="facebook"></a><a href="http://freewebsitetemplates.com/go/twitter/" class="twitter"></a><a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus"></a><a href="http://pinterest.com/fwtemplates/" class="pinterest"></a>
+				</div>
+				<p>
+					© Copyright 2023 Manes Winchester. All Rights Reserved.
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

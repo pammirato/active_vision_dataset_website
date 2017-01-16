@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>About - Law Firm Web Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="header">
+		<div class="clearfix">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.jpg" alt="LOGO" height="52" width="362"></a>
+			</div>
+			<ul class="navigation">
+				<li class="active">
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="get_data.html">Get Data</a>
+				</li>
+				<li>
+					<a href="in_construction.html">Process Data</a>
+					<div>
+						<a href="singlepost.html">News Single Post</a>
+					</div>
+				</li>
+				<li>
+					<a href="in_construction.html">Add Labels/Data</a>
+				</li>
+				<li>
+					<a href="in_construction.html">People</a>
+				</li>
+				<li>
+					<a href="in_construction.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="contents">
+		<div class="clearfix">
+			<h1>Our Data</h1>
+			<div class="frame2">
+				<div class="box">
+					<img src="images/rohit_rep_pics.jpg" alt="Img" height="298" width="924">
+				</div>
+			</div>
+      <p> 
+        <ul>
+          <li> <a href="#description">Description of our data</a>
+          <li> <a href="#example">A small example scene for download</a>
+          <li> <a href="#download">Links to download the entire dataset</a>
+          <li> <a href="#bigbird">Link to BigBIRD dataset</a>
+        </ul> 
+      </p>
+
+
+			<h2 id="description">What We Have </h2>
+			<p>
+        Our dataset aims to allow simulation of robotic motion through
+        an environment for object detection. We collect data in many 
+        scenes, which may be one or more rooms in a home or office. 
+        For most scenes we conduct a full scan, and then move instances
+        around the scene and collect either a full second scan or a 
+        partial second scan. A partial scan has much less images and 
+        coverage of the scene than a full scan.
+        A number of object instances from the 
+        <a href="http://rll.berkeley.edu/bigbird/">BigBIRD</a>
+        dataset are placed
+        in every scene. We then sample 12 images 30 degrees apart at 
+        various locations in the scene. When you download our dataset
+        you will receive:
+        <br/>
+        <ul>
+          <li> One directory for each scan of each scene holding: </li>
+          <ul>
+            <li>RGB images in lossy JPG compressed format: 
+                1920x1080 resolution </li>
+            <li>Depth images, 16 bit PNG format, registered to
+                be the same resolution as the RGB images</li>
+            <li> Bounding box labels in .mat files. See our 
+                <a href=''>process data</a> page to see how 
+                to convert the labels to .txt format</li>
+          </ul>
+        </ul> 
+        <br/>
+        Upon request, we can also provide the following:
+        <ul>
+          <li> Sparse/Dense reconstrucions of each scene</li>
+          <li>
+            3D point cloud labels of each instance in the
+            dense reconstruction  
+          </li>
+          <li> Original resolution(512x424) depth images </li>
+          <li> Improved depth images (see paper) </li>
+          <li> Original uncompressed PNG format RGB images </li>
+        </ul> 
+			</p>
+
+      <h2> bounding box format </h2>
+      <p> in construction </p>
+
+			<h2 id="example">Example Scene</h2>
+			<p>
+        Instead of downloading our entire dataset you can get an idea of
+        what our images look like, our label format, and a general sense of
+        how our data is organized by downloading this single example scan. 
+        <br/>
+        Note: This scan is also included in our full dataset.
+        <br/>
+        <br/>
+        <a href=''>Example scan</a>
+
+			</p>
+			<h2 id="download">Download Our Data</h2>
+			<p>
+        Here you can download our entire dataset, excluding the few scans we have held
+        our for testing purposes. To test against these scans....
+        To reduce the download size, we have broken up the dataset into a few .tar files:
+        <br/>
+        <a href=''>Part 1</a>
+        <br/>
+        <a href=''>Part 2</a>
+        <br/>
+        <a href=''>Part 3</a>
+        <br/>
+        <a href=''>Part 4</a>
+        <br/>
+        <a href=''>Part 5</a>
+			</p>
+			<h2 id="bigbird">Description of common instances</h2>
+      <p> 
+        We capture and label 33 BigBIRD instances throughout our scenes. 
+        Below is links for a text file with a list of the instances using
+        the names given in the BigBIRD data and an image of each instance.
+        Each also instance also has an integer id for labeling in the text file.
+        <br/>
+        <br/>
+        <a href='instance_id_map.txt'>Instance names/ids</a>     
+        <br/>
+        <a href=''>Instance images</a>     
+ 
+      </p>
+		</div>
+	</div>
+</body>
+</html>
