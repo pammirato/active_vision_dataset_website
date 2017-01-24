@@ -3,14 +3,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>About - Law Firm Web Template</title>
+	<title>Get Data - Active Vision Dataset</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	<div id="header">
 		<div class="clearfix">
-			<div class="logo">
-				<a href="index.html"><img src="images/logo.jpg" alt="LOGO" height="52" width="362"></a>
+			<!--<div class="logo"> -->
+      <div>
+		<!--		<a href="index.html"><img src="images/logo.jpg" alt="LOGO" height="52" width="362"></a> -->
+				<a href="index.html"><img src="images/logo.jpg" alt="LOGO" height="100%" width="25%"></a>
 			</div>
 			<ul class="navigation">
 				<li class="active">
@@ -37,6 +39,7 @@
 			</ul>
 		</div>
 	</div>
+
 
 	<div id="contents">
 		<div class="clearfix">
@@ -79,9 +82,12 @@
                 1920x1080 resolution </li>
             <li>Depth images, 16 bit PNG format, registered to
                 be the same resolution as the RGB images</li>
-            <li> Bounding box labels in .mat files. See our 
-                <a href=''>process data</a> page to see how 
-                to convert the labels to .txt format</li>
+            <li> Annotations in .json files, one per scene. 
+                 See our format <a href='#annotation_format'>here</a>
+                 Annotations in included bounding boxes and
+                pointers to allow movement through each scene</li>
+            <li> image_structs.mat - a file holding data used in
+                  our MATLAB visualizations</li>
           </ul>
         </ul> 
         <br/>
@@ -98,8 +104,37 @@
         </ul> 
 			</p>
 
-      <h2> bounding box format </h2>
-      <p> in construction </p>
+
+      <div class="beige">
+      <h2 id="annotation_format"> Annotation format </h2>
+      <p>
+        Each scene has one <a href="http://json.org/">JSON</a> file for all annotaions, 
+        with following format:
+        <br/>
+
+        <pre>
+          {
+              "image_name":{
+                "bounding_boxes":[
+                    [xmin ymin xmax ymax instance_id difficulty],
+                    [xmin ymin xmax ymax instance_id difficulty],
+                    ...,
+                ],
+                "rotate_ccw":"another_image_name",
+                "rotate_cw":"another_image_name",
+                "forward":"another_image_name",
+                "backward":"another_image_name",
+                "left":"another_image_name",
+                "right":"another_image_name"
+            },
+            "next_image_name":{ ...
+
+          }
+        </pre> 
+        
+
+      </p>
+      </div>
 
 			<h2 id="example">Example Scene</h2>
 			<p>
@@ -110,7 +145,8 @@
         Note: This scan is also included in our full dataset.
         <br/>
         <br/>
-        <a href=''>Example scan</a>
+        <a href='https://drive.google.com/uc?export-download&id=0B8zhxvoYK3WTQThfRTBTWWp0UTQ'>
+        Example scan</a>
 
 			</p>
 			<h2 id="download">Download Our Data</h2>
@@ -118,6 +154,8 @@
         Here you can download our entire dataset, excluding the few scans we have held
         our for testing purposes. To test against these scans....
         To reduce the download size, we have broken up the dataset into a few .tar files:
+        <br/>
+        <a href='instance_id_map.txt'>Instance names/ids</a>     
         <br/>
         <a href=''>Part 1</a>
         <br/>
@@ -129,10 +167,13 @@
         <br/>
         <a href=''>Part 5</a>
 			</p>
+
+
+      <div class="beige">
 			<h2 id="bigbird">Description of common instances</h2>
       <p> 
         We capture and label 33 BigBIRD instances throughout our scenes. 
-        Below is links for a text file with a list of the instances using
+        Below are links for a text file with a list of the instances using
         the names given in the BigBIRD data and an image of each instance.
         Each also instance also has an integer id for labeling in the text file.
         <br/>
@@ -140,8 +181,117 @@
         <a href='instance_id_map.txt'>Instance names/ids</a>     
         <br/>
         <a href=''>Instance images</a>     
- 
       </p>
+
+      <div>
+
+
+
+<table>
+	<tr>
+		<td><img src="images/advil_liqui_gels.jpg" class="big_bird_single"></td>
+		<td><img src="images/aunt_jemima_original_syrup.jpg" class="big_bird_single"></td>
+		<td><img src="images/bumblebee_albacore.jpg" class="big_bird_single"></td>
+		<td><img src="images/cholula_chipotle_hot_sauce.jpg" class="big_bird_single"></td>
+		<td><img src="images/coca_cola_glass_bottle.jpg" class="big_bird_single"></td>
+
+	</tr>
+	<tr>
+		<td>advil_liqui_gels</td>
+		<td>aunt_jemima_origin<br/>al_syrup</td>
+		<td>bumblebee_albacore</td>
+		<td>cholula_chipotle_h<br/>ot_sauce</td>
+		<td>coca_cola_glass_bo<br/>ttle</td>
+
+	</tr>
+	<tr>
+		<td><img src="images/crest_complete_minty_fresh.jpg" class="big_bird_single"></td>
+		<td><img src="images/crystal_hot_sauce.jpg" class="big_bird_single"></td>
+		<td><img src="images/expo_marker_red.jpg" class="big_bird_single"></td>
+		<td><img src="images/hersheys_bar.jpg" class="big_bird_single"></td>
+		<td><img src="images/honey_bunches_of_oats_honey_roasted.jpg" class="big_bird_single"></td>
+
+	</tr>
+	<tr>
+		<td>crest_complete_min<br/>ty_fresh</td>
+		<td>crystal_hot_sauce</td>
+		<td>expo_marker_red</td>
+		<td>hersheys_bar</td>
+		<td>honey_bunches_of_o<br/>ats_honey_roasted</td>
+	</tr>
+	<tr>
+		<td><img src="images/honey_bunches_of_oats_with_almonds.jpg" class="big_bird_single"></td>
+		<td><img src="images/hunts_sauce.jpg" class="big_bird_single"></td>
+		<td><img src="images/listerine_green.jpg" class="big_bird_single"></td>
+		<td><img src="images/mahatma_rice.jpg" class="big_bird_single"></td>
+		<td><img src="images/nature_valley_granola_thins_dark_chocolate.jpg" class="big_bird_single"></td>
+
+	</tr>
+	<tr>
+		<td>honey_bunches_of_o<br/>ats_with_almonds</td>
+		<td>hunts_sauce</td>
+		<td>listerine_green</td>
+		<td>mahatma_rice</td>
+		<td>nature_valley_gran<br/>ola_thins_dark_chocolate</td>
+	</tr>
+	<tr>
+		<td><img src="images/nature_valley_sweet_and_salty_nut_almond.jpg" class="big_bird_single"></td>
+		<td><img src="images/nature_valley_sweet_and_salty_nut_cashew.jpg" class="big_bird_single"></td>
+		<td><img src="images/nature_valley_sweet_and_salty_nut_peanut.jpg" class="big_bird_single"></td>
+		<td><img src="images/nature_valley_sweet_and_salty_nut_roasted_mix_nut.jpg" class="big_bird_single"></td>
+		<td><img src="images/nutrigrain_harvest_blueberry_bliss.jpg" class="big_bird_single"></td>
+
+	</tr>
+	<tr>
+		<td>nature_valley_swee<br/>t_and_salty_nut_<br/>almond</td>
+		<td>nature_valley_swee<br/>t_and_salty_nut_<br/>cashew</td>
+		<td>nature_valley_swee<br/>t_and_salty_nut_<br/>peanut</td>
+		<td>nature_valley_swee<br/>t_and_salty_nut_<br/>roasted_mix_nut</td>
+		<td>nutrigrain_harvest<br/>_blueberry_bliss</td>
+
+	</tr>
+	<tr>
+		<td><img src="images/paper_plate.jpg" class="big_bird_single"></td>
+		<td><img src="images/pepto_bismol.jpg" class="big_bird_single"></td>
+		<td><img src="images/pringles_bbq.jpg" class="big_bird_single"></td>
+		<td><img src="images/progresso_new_england_clam_chowder.jpg" class="big_bird_single"></td>
+		<td><img src="images/quaker_chewy_low_fat_chocolate_chunk.jpg" class="big_bird_single"></td>
+	</tr>
+	<tr>
+		<td>paper_plate</td>
+		<td>pepto_bismol</td>
+		<td>pringles_bbq</td>
+		<td>progresso_new_engl<br/>and_clam_chowder</td>
+		<td>quaker_chewy_low_f<br/>at_chocolate_chunk</td>
+	</tr>
+	<tr>
+		<td><img src="images/red_bull.jpg" class="big_bird_single"></td>
+		<td><img src="images/red_cup.jpg" class="big_bird_single"></td>
+		<td><img src="images/softsoap_clear.jpg" class="big_bird_single"></td>
+		<td><img src="images/softsoap_gold.jpg" class="big_bird_single"></td>
+		<td><img src="images/softsoap_white.jpg" class="big_bird_single"></td>
+	</tr>
+	<tr>
+		<td>red_bull</td>
+		<td>red_cup</td>
+		<td>softsoap_clear</td>
+		<td>softsoap_gold</td>
+		<td>softsoap_white</td>
+	</tr>
+	<tr>
+		<td><img src="images/spongebob_squarepants_fruit_snaks.jpg" class="big_bird_single"></td>
+		<td><img src="images/tapatio_hot_sauce.jpg" class="big_bird_single"></td>
+		<td><img src="images/vo5_tea_therapy_healthful_green_tea_smoothing_shampoo.jpg" class="big_bird_single"></td>
+	</tr>
+	<tr>
+		<td>spongebob_squarepa<br/>nts_fruit_snaks</td>
+		<td>tapatio_hot_sauce</td>
+		<td>vo5_tea_therapy_he<br/>althful_green_tea_<br/>smoothing_shampoo</td>
+	</tr></table>
+      </div>
+
+      </div>
+
 		</div>
 	</div>
 </body>

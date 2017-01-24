@@ -1,9 +1,20 @@
 /* Website template by freewebsitetemplates.com */
 body {
 	background-color: #e2e2e2;
-	min-width: 960px;
+	/*min-width: 960px;*/
 	margin: 0;
 }
+
+.beige{
+  background-color: #f1daab;
+}
+
+.big_bird_single{
+  width: 152px;
+  height: 114px;
+}
+
+
 img {
 	display: block;
 	border: 0;
@@ -25,7 +36,7 @@ img {
 	display: block;
 	position: relative; /* This protects the inner element from being blurred */
 }
-.clearfix {
+/*.clearfix {
 	width: 960px;
 	margin: 0 auto;
 }
@@ -36,7 +47,7 @@ img {
 	line-height:0;
 	height:1%;
 	visibility:hidden;
-}
+}*/
 /*------------ Sprites ------------*/
 .more, .subscribe, input[type='submit'] {
 	background: url(../images/interface.png) no-repeat;
@@ -137,8 +148,8 @@ img {
 .navigation {
 	float: right;
 	list-style: none;
-	margin: 28px 0 0;
-	padding: 0;
+	/*margin: 28px 0 0;
+	padding: 0;*/
 }
 .navigation li {
 	float: left;
@@ -185,10 +196,10 @@ img {
 #contents {
 	padding-bottom: 24px;
 }
-#contents > div.clearfix:first-child {
+/*#contents > div.clearfix:first-child {
 	width: 940px;
 	padding: 30px 10px 0;
-}
+}*/
 #contents img {
 	border: 1px solid rgba(231, 231, 231, 0.8);
 }
@@ -260,9 +271,9 @@ p a:hover {
 	background: #eee url(../images/bg-highlight.jpg) repeat-x left bottom;
 	border-bottom: 1px solid #fff;
 }
-.highlight .clearfix {
+/*.highlight .clearfix {
 	width: 940px;
-}
+}*/
 .highlight h1 {
 	font-size: 32px;
 	line-height: 36px;

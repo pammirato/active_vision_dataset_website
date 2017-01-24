@@ -1,0 +1,55 @@
+Instructions for running the data collection process
+
+A. Make sure everything is plugged in:
+    i. Kinect to laptop
+    ii. Kintect to power source
+    iii. Robot/keyboard to laptop
+    iv. Laptop to power source
+    v. Are all power sources on?
+
+B.  Open four terminals: #=comment
+
+  1. #Enable permissions for robot for rosaria
+     sudo chmod a+rw /dev/ttyUSB0
+
+     #then connect to robot
+     rosrun rosaria RosAria
+
+
+  2. #start process to connect keyboard to robot
+     rosrun robot_control keyboard_controller
+
+  3.  #connect Kinect to laptop
+      roslaunch kinect2_bridge no_point_cloud_kinect2_brigde.launch
+
+  4. #connect keyboard to Kinect
+     rosrun save_data save_data
+
+Robot Command Cheat Sheet
+
+All commands are case sensitve.
+You MUST PRESS ENTER after each command to input it. Just typing the letter has no effect.
+
+Definitions:
+'collect a cluster': rotate 30 degrees 12 times and save an image after each rotation. This is the basic operation of data collection.
+
+
+Most common commands:
+
+'w' - increase FORWARD velocity
+'a' - increase COUNTER-CLOCKWISE rotation velocity
+'s' - increase CLOCKWISE velocity
+'d' - increase BACKWARD velocity
+'c' - STOP all motion(velocities set to 0)
+
+Compound Commands. Must enter letter, ENTER, number, ENTER 
+
+'k'
+'#'  - Collect a cluster at the current location, then move forward 30cm and collect another cluster, # amount of times. i.e. k, 0 just collects one cluster at the current location. k,1 collects 2 clusters, 1 at the current location and one 30cm forward.
+
+
+'l'
+'#' - Move 30cm, then collect a cluster, then repeat # number of times. So l,0 moves forward once and collects 1 cluster. l,1 collects 2 clusters, moving a total of 60cm, and so on. 
+
+**See the code for all other commands. 
+
