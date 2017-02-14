@@ -5,156 +5,173 @@
 	<meta charset="UTF-8">
 	<title>Law Firm</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/mdb.min.css" rel="stylesheet">
+
+
+    <link href="css/w3.css" rel="stylesheet" />
+		<script src ="js/jquery-3.1.1.js"></script>
+		<script src ="js/mdb.js"></script>
+        <script src = "js/bootstrap.js"></script>
+        <script src = "js/tether.min.js"></script>
 </head>
 <body>
-	<div id="header">
-		<div class="clearfix">
-			<!--<div class="logo"> -->
-      <div>
-		<!--		<a href="index.html"><img src="images/logo.jpg" alt="LOGO" height="52" width="362"></a> -->
-				<a href="index.html"><img src="images/logo.jpg" alt="LOGO" height="100%" width="25%"></a>
-			</div>
-			<ul class="navigation">
-				<li class="active">
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="get_data.html">Get Data</a>
-				</li>
-				<li>
-					<a href="in_construction.html">Process Data</a>
-					<div>
-						<a href="singlepost.html">News Single Post</a>
-					</div>
-				</li>
-				<li>
-					<a href="in_construction.html">Add Labels/Data</a>
-				</li>
-				<li>
-					<a href="in_construction.html">People</a>
-				</li>
-				<li>
-					<a href="in_construction.html">Contact</a>
-				</li>
-			</ul>
-		</div>
+	<nav class="navbar navbar-dark bg-primary black" id = "topnav">
+
+	<div class = "container">
+				<div id="logo-container">
+								<a id = "logo" href="index.html">
+									<img src="images/logo.jpg" id ="logoimg">
+								</a>
+				</div>
+
+	<div id = "navsection">
+
+
+	<ul class="nav navbar-nav">
+		<li class="active nav-item">
+			<a class ="nav-link" href="index.html">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class = "nav-link" href="get_data.html">Get Data</a>
+		</li>
+		<li class="nav-item">
+			<a class = "nav-link" href="in_construction.html">Process Data</a>
+
+		</li>
+
+		<li class="nav-item">
+			<a class = "nav-link" href="in_construction.html">Add Labels/Data</a>
+		</li>
+		<li class="nav-item">
+			<a class = "nav-link" href="people.html">People</a>
+		</li>
+		<li class="nav-item">
+			<a class = "nav-link" href="in_construction.html">Contact</a>
+		</li>
+	</ul>
 	</div>
-	<div id="contents">
-		<div id="adbox">
-		</div>
+	</div>
+	</nav>
+
+	<div id="contents" class = "stylish-color-dark">
 		<div class="highlight">
-			<div class="clearfix">
+			<div class="card" id = "overviewcard">
 				<div class="testimonial">
 					<h2>Research Paper</h2>
 					<p>Check out our paper <a href="">here</a></p>
 					<p>Please cite  <br/>
-              bibtex 
+              bibtex
 
           </p>
 				</div>
         <br/>
-				<p>
-					 Our dataset allows simulation of motion for object instance recognition in real-world environments. 
-					<ul>
-					  <li> 45,000+ RGBD images </li>	
-					  <li> 30+ frequently occuring instances </li>	
-					  <li> 20 scenes </li>	
-					  <li> 50,000+ 2D bounding boxes </li>	
+
+				<h2>The Dataset</h2>
+				<h5>
+					 Our dataset allows simulation of motion for object instance recognition in real-world environments.
+				 </h5>
+				 <div id = "datawrap">
+
+
+					<ul class = "list-group">
+					  <li class = "list-group-item"> 45,000+ RGBD images </li>
+					  <li class = "list-group-item"> 30+ frequently occuring instances </li>
+					  <li class = "list-group-item"> 20 scenes </li>
+					  <li class = "list-group-item"> 50,000+ 2D bounding boxes </li>
 					</ul>
-				</p>
+					</div>
+
 			</div>
 		</div>
-		<div class="featured">
-			<h2>Why Choose Us?</h2>
-			<ul class="clearfix">
-				<li>
-					<div class="frame1">
-						<div class="box">
-							<img src="images/download_arrow.jpg" alt="Img" height="130" width="197">
-						</div>
-					</div>
-					<p>
-						<b>Get Data</b> Download some or all of our images and labels. Check out exactly what we have. 
-					</p>
-					<a href="get_data.html" class="more">Read More</a>
-				</li>
-				<li>
-					<div class="frame1">
-						<div class="box">
-							<img src="images/boxes_depth2.jpg" alt="Img" height="130" width="197">
-						</div>
-					</div>
-					<p>
-						<b>Process Data</b> 
-            Explore our tools for visualizing and processing the data. 
-					</p>
-					<a href="index.html" class="more">Read More</a>
-				</li>
-				<li>
-					<div class="frame1">
-						<div class="box">
-							<img src="images/four_pointclouds.jpg" alt="Img" height="130" width="197">
-						</div>
-					</div>
-					<p>
-						<b>Add Labels/Data</b> Want to learn how to duplicate our 
-                collection/labeling process? If you want to add to our
-                 dataset or just use our code to build your own click here. 
-					</p>
-					<a href="index.html" class="more">Read More</a>
-				</li>
-				<li>
-					<div class="frame1">
-						<div class="box">
-							<img src="images/smile.jpg" alt="Img" height="130" width="197">
-						</div>
-					</div>
-					<p>
-						<b>Contact us</b> 
-					</p>
-					<a href="index.html" class="more">Read More</a>
-				</li>
-			</ul>
+
+		<div id="carousel-example-2" class=" carousel w3-content w3-display-containter slide carousel-fade"  data-ride="carousel">
+		    <!--Indicators-->
+		    <ol class="carousel-indicators">
+		        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+		        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+		        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+						<li data-target="#carousel-example-2" data-slide-to="3"></li>
+		    </ol>
+		    <!--/.Indicators-->
+		    <!--Slides-->
+		    <div class="carousel-inner" role="listbox">
+		        <div class="carousel-item active">
+									<div class = "cardslides card card-block homecards block-center">
+
+												<div class="card-box box" >
+													<img src="images/download_arrow.jpg" alt="Img" style="height:300px !important" width="100%">
+												</div>
+
+												<h3>Get Data</h3>
+											<p>
+												Download some or all of our images and labels. Check out exactly what we have.
+											</p>
+											<a href="get_data.html" class="btn stylish-color-dark">Read More</a>
+									</div>
+		        </div>
+		        <div class="carousel-item">
+		            <!--Mask color-->
+									<div class = "cardslides card card-block homecards block-center">
+												<div class="card-box box">
+													<img src="images/boxes_depth2.jpg" alt="Img" style="height:300px !important" width="100%">
+												</div>
+												<h3>Process Data</h3>
+											<p>
+						            Explore our tools for visualizing and processing the data.
+											</p>
+											<a href="index.html" class="btn stylish-color-dark">Read More</a>
+									</div>
+		        </div>
+		        <div class="carousel-item">
+		            <!--Mask color-->
+									<div class = "cardslides card card-block homecards block-center">
+												<div class="card-box box">
+													<img src="images/boxes_depth1.jpg" alt="Img" style="height:300px !important" width="100%">
+												</div>
+
+												<h3>Add Labels/Data</h3>
+											<p>
+												Want to learn how to duplicate our
+						                collection/labeling process? If you want to add to our
+						                 dataset or just use our code to build your own click here.
+											</p>
+											<a href="index.html" class="btn stylish-color-dark">Read More</a>
+									</div>
+		        </div>
+						<div class="carousel-item">
+		            <!--Mask color-->
+									<div class = "cardslides homecards card card-block block-center">
+
+												<div class="card-box box">
+													<img src="images/smile.jpg" alt="Img" style="height:300px !important;" width="100%">
+												</div>
+												<h3>Contact us</h3>
+
+											<a href="index.html" class="btn stylish-color-dark">Read More</a>
+									</div>
+		        </div>
+		    </div>
+		    <!--/.Slides-->
+		    <!--Controls-->
+		    <a class="carousel-control left" href="#carousel-example-2" role="button" data-slide="prev">
+		        <span class="icon-prev" aria-hidden="true"></span>
+		        <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="carousel-control right" href="#carousel-example-2" role="button" data-slide="next">
+		        <span class="icon-next" aria-hidden="true"></span>
+		        <span class="sr-only">Next</span>
+		    </a>
+		    <!--/.Controls-->
 		</div>
-	</div>
-  <!--
-	<div id="footer">
-		<div class="clearfix">
-			<div class="section">
-				<h4>Latest News</h4>
-				<p>
-					This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link.
-				</p>
-			</div>
-			<div class="section contact">
-				<h4>Contact Us</h4>
-				<p>
-					<span>Address:</span> the address city, state 1111
-				</p>
-				<p>
-					<span>Phone:</span> (+20) 000 222 999
-				</p>
-				<p>
-					<span>Email:</span> info@freewebsitetemplates.com
-				</p>
-			</div>
-			<div class="section">
-				<h4>SEND US A MESSAGE</h4>
-				<p>
-					If you're having problems editing this website template, then don't hesitate to ask for help on the Forums.
-				</p>
-				<a href="http://www.freewebsitetemplates.com/misc/contact/" class="subscribe">Click to send us an email</a>
-			</div>
+
+
+		<div class = "bottom">
+
+					<img id = "pointcloud" src = "images/four_pointclouds.jpg"/>
+
 		</div>
-		<div id="footnote">
-			<div class="clearfix">
-				<div class="connect">
-				</div>
-				<p>
-				</p>
-			</div>
-		</div>
-	</div>
-  -->
+</div>
+
 </body>
 </html>
