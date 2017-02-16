@@ -35,12 +35,12 @@
 					<a class = "nav-link" href="get_data.html">Get Data</a>
 				</li>
 				<li class="nav-item">
-					<a class = "nav-link" href="in_construction.html">Process Data</a>
+					<a class = "nav-link" href="in_construction.html">Visualize Data</a>
 
 				</li>
 
 				<li class="nav-item">
-					<a class = "nav-link" href="in_construction.html">Add Labels/Data</a>
+					<a class = "nav-link" href="in_construction.html">Add Data</a>
 				</li>
 				<li class="nav-item">
 					<a class = "nav-link" href="people.html">People</a>
@@ -57,61 +57,63 @@
 	<div id="contents">
 
 
-			<div class = "jumbotron" id="panel1" style= "display:block;">
+<!--			<div class = "jumbotron" id="panel5" style= "display:block;">
 				<ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" onclick="changePanel(1)">Our Data</a>
-  </li>
+  </li> 
   <li class="nav-item">
     <a class="nav-link" onclick="changePanel(2)">What We Have</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" onclick="changePanel(3)">Annotation</a>
+    <a class="nav-link" onclick="changePanel(3)">Formats</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" onclick="changePanel(4)">Downloads</a>
+    <a class="nav-link" onclick="changePanel(4)">Main Data Download</a>
   </li>
 	<li class="nav-item">
 		<a class="nav-link" onclick="changePanel(5)">Instances</a>
 	</li>
 </ul>
 
-				<h1 class = "cardheader">Our Data</h1>
+			<h1 class = "cardheader">Our Data</h1>
 			<div class="frame2">
 				<div class="box">
 					<img src="images/rohit_rep_pics.jpg" alt="Img" height="298" width="924">
 				</div>
 			</div>
+
+
       <p>
-				<!--<div style="margin-left: 20%; margin-right: 20%;">
+				<div style="margin-left: 20%; margin-right: 20%;">
 
 
         <ul class = "list-group" style = "text-align:center; display:inline;">
           <li class = "list-group-item"> <button class = "btn btn-elegant" onclick = "changePanel(2)">Description of our data</button> </li>
-          <li class = "list-group-item"> <button class = "btn btn-elegant" onclick = "changePanel(3)">Annotation Format</button></li>
+          <li class = "list-group-item"> <button class = "btn btn-elegant" onclick = "changePanel(3)">Formats Format</button></li>
           <li class = "list-group-item"> <button class = "btn btn-elegant" onclick = "changePanel(4)">Links to download the entire dataset or an example scene</button></li>
           <li class = "list-group-item"> <button class = "btn btn-elegant" onclick = "changePanel(5)">Link to BigBIRD dataset</button></li>
         </ul>
-			</div> --->
+			</div> 
       </p>
-</div>
-	<div class = "jumbotron" id = "panel2">
+</div> -->
+	<div class = "jumbotron" id = "panel1">
 
 		<ul class="nav nav-tabs">
-<li class="nav-item">
+<!--<li class="nav-item">
 <a class="nav-link" onclick="changePanel(1)">Our Data</a>
+</li> -->
+<li class="nav-item">
+<a class="nav-link active" onclick="changePanel(1)">What We Have</a>
 </li>
 <li class="nav-item">
-<a class="nav-link active" onclick="changePanel(2)">What We Have</a>
+<a class="nav-link" onclick="changePanel(2)">Formats</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" onclick="changePanel(3)">Annotation</a>
+<a class="nav-link" onclick="changePanel(3)">Main Data Download</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" onclick="changePanel(4)">Downloads</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" onclick="changePanel(5)">Instances</a>
+<a class="nav-link" onclick="changePanel(4)">Instances</a>
 </li>
 </ul>
 			<h2 class = "cardheader">What We Have </h2>
@@ -119,16 +121,39 @@
         Our dataset aims to allow simulation of robotic motion through
         an environment for object detection. We collect data in many
         scenes, which may be one or more rooms in a home or office.
+        <br/>
+        <br/>
+        Collection Procedure:
+        <p style="padding-left: 1.8em">
         For most scenes we conduct a full scan, and then move instances
         around the scene and collect either a full second scan or a
         partial second scan. A partial scan has much less images and
-        coverage of the scene than a full scan.
+        coverage of the scene than a full scan. 
         A number of object instances from the
         <a href="http://rll.berkeley.edu/bigbird/">BigBIRD</a>
         dataset are placed
-        in every scene. We then sample 12 images 30 degrees apart at
-        various locations in the scene. When you download our dataset
-        you will receive:</p>
+        in every scene. The second scan usually has
+        a different subset of BigBIRD instances than the first scan.
+        We then sample 12 images 30 degrees apart at
+        various locations in the scene. We recommend using
+        our visualization code with the example scene to understand the dataset.
+        More detailed info can be found in our paper, and on the Add Data page.
+        </p>
+
+
+        <br/>
+        Objects:
+        <p style="padding-left: 1.8em">
+            Currently we label 33 unique instances in our scenes. More info about these
+            instances can be found in the instances tab above.
+        </p>
+
+    
+        
+        <br/>
+        <br/>
+        <strong> When you download our dataset
+        you will receive: </strong> </p>
         <br/>
 				<div id = "wrap">
 				<div class = "card" id = "datasetover">
@@ -143,16 +168,20 @@
 				<div class = "card-block">
 
 						<ul class = "list-group cardlists">
-							<li class = "list-group-item">RGB images in lossy JPG compressed format:
+							<li class = "list-group-item"><strong>RGB images:</strong> Lossy JPG compressed format.
 									1920x1080 resolution </li>
-							<li class = "list-group-item">Depth images, 16 bit PNG format, registered to
-									be the same resolution as the RGB images</li>
-							<li class = "list-group-item"> Annotations in .json files, one per scene.
-									 See our format <a href="#annotation_format">here</a>
-									 Annotations in included bounding boxes and
+							<li class = "list-group-item"><strong>Depth images:</strong> 16 bit PNG format, registered to
+									be the same resolution as the RGB images. They are 
+                                then losslessly compressed using the 
+              <a href="http://optipng.sourceforge.net/" target="_blank" class="blue-text">optipng</a> tool.</li>
+							<li class = "list-group-item"> <strong>annotations.json:</strong> 
+									 See our format in the next tab.
+									 Annotations include 2D bounding boxes and
 									pointers to allow movement through each scene</li>
-							<li class = "list-group-item"> image_structs.mat - a file holding data used in
-										our MATLAB visualizations</li>
+							<li class = "list-group-item"> <strong>image_structs.mat:</strong> Holds data including reconstructed camera position for each image. 
+							Used in some of our visualizations</li>
+							<li class = "list-group-item"> <strong>present_instance_names.txt</strong> List of all the instances in the scene, using their names from BigBIRD. 
+							Used in some of our visualizations</li>
 						</ul>
 
 				</div>
@@ -163,7 +192,7 @@
 				<div class = "card" id = "request">
 				<div class = "card-header special-color-dark">
 					<h5 style = "color:white;">
-						Upon request, we can also provide the following:
+						Upon request, we may also provide the following:
 					</h5>
 				</div>
 
@@ -186,24 +215,90 @@
 	</div>
 		</div>
 
-      <div class="jumbotron" id = "panel3">
+      <div class="jumbotron" id = "panel2">
 				<ul class="nav nav-tabs">
-  <li class="nav-item">
+<!--  <li class="nav-item">
     <a class="nav-link" onclick="changePanel(1)">Our Data</a>
+  </li> -->
+  <li class="nav-item">
+    <a class="nav-link" onclick="changePanel(1)">What We Have</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" onclick="changePanel(2)">What We Have</a>
+    <a class="nav-link active" onclick="changePanel(2)">Formats</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" onclick="changePanel(3)">Annotation</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" onclick="changePanel(4)">Downloads</a>
+    <a class="nav-link" onclick="changePanel(3)">Main Data Download</a>
   </li>
 	<li class="nav-item">
-		<a class="nav-link" onclick="changePanel(5)">Instances</a>
+		<a class="nav-link" onclick="changePanel(4)">Instances</a>
 	</li>
 </ul>
+
+     <br/>
+     <br/>
+     <p> Here we define our format for:
+        <ul>
+            <li> bounding boxes</li> 
+            <li> annotation files</li>
+            <li> image names </li>
+        </ul>
+     </p>
+
+
+
+      <h2 class="cardheader" id="box_format"> bounding box format </h2>
+      <p>
+        <br/>
+
+
+		<div class ="jumbotron stylish-color-dark">
+
+
+        <pre style= "color:white; ">
+Each bounding box has 6 numbers:
+
+1. xmin - minimum x value of bounding box
+2. ymin - minimum y value of bounding box
+3. xmax - maximum x value of bounding box
+4. xmax - maximum y value of bounding box
+5. instance_id - numeric id of the instance that is labeled
+6. difficulty - a measure of how difficult the box 
+                may be for a computer to replicate
+
+*Currently, difficulty is just a measure of the box size, defined below.
+ We hope to improve this to account for occlusion in the future. 
+
+
+if box > (300x100)
+    difficulty = 1;
+elseif(box  > (200x75)
+    difficulty = 2;
+elseif box > (100x50)
+    difficulty = 3;
+elseif box > (50x30)
+    difficulty = 4;
+else
+    difficulty = 5;
+end 
+
+**Box's larger dimension must be greater than first number, 
+  smaller dimension greater than second number.
+
+Ex)  A box that is 250x80 has difficulty 2.
+     A box that is 80x250 has difficulty 2.
+     A box that is 250x60 has difficulty 3.
+     A box that is 60x250 has difficulty 3.
+
+        </pre>
+
+	</div>
+      </p>
+
+
+
+
+
+
       <h2 class="cardheader" id="annotation_format"> Annotation format </h2>
       <p>
         Each scene has one <a href="http://json.org/" class = "blue-text">JSON</a> file for all annotaions,
@@ -215,44 +310,114 @@
 
 
         <pre style= "color:white; ">
-          {
-              "image_name":{
-                "bounding_boxes":[
-                    [xmin ymin xmax ymax instance_id difficulty],
-                    [xmin ymin xmax ymax instance_id difficulty],
-                    ...,
-                ],
-                "rotate_ccw":"another_image_name",
-                "rotate_cw":"another_image_name",
-                "forward":"another_image_name",
-                "backward":"another_image_name",
-                "left":"another_image_name",
-                "right":"another_image_name"
-            },
-            "next_image_name":{ ...
+{
+    "image_name":{
+      "bounding_boxes":[
+          [xmin ymin xmax ymax instance_id difficulty],
+          [xmin ymin xmax ymax instance_id difficulty],
+          ...,
+      ],
+      "rotate_ccw":"another_image_name",
+      "rotate_cw":"another_image_name",
+      "forward":"another_image_name",
+      "backward":"another_image_name",
+      "left":"another_image_name",
+      "right":"another_image_name"
+  },
+  "next_image_name":{ ...
 
-          }
+}
         </pre>
 
 	</div>
       </p>
+
+         
+        <h2 class="cardheader"> Image Name Format</h2>
+
+		<div class ="jumbotron stylish-color-dark">
+      
+
+
+        <pre style= "color:white; ">
+Each image has a unique name.
+Our image names have 15 digits, followed by the file extension(.jpg/.png).
+
+Example: 000120001620101.jpg 
+
+
+(Digit 1) = Scene Type
+        0 - Home
+        1 - Office 
+
+
+(Digits 2-4) = Scene Number 
+        Ex. 001 = scene 1 of this type
+
+
+(Digit 5) = Scan Number 
+        Ex. 2 = scan 2 of this scene
+
+(Digits 6-11) = Image Index 
+       Ex. 000162 = the 162nd image captured in this scan 
+
+(digits 12-13) = Camera Index 
+       Ex. 01 = this image was taken with Camera 1
+
+(digits 14-15) = Image type 
+        01 - RGB 
+        02 - raw_depth (512x424)
+        03 - high_res_depth (1920x1080)
+        05 - improved_depths (see paper, not currently available for download)
+
+
+
+
+So for image 000120001620101.jpg:
+
+Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
+
+
+        </pre>
+
+
+<!--      <p style="color:white;">
+            Our image names have 15 digits, followed by the file extension(.jpg/.png).
+             <br/>
+             <br/>
+             Example: 000120001620101.jpg 
+
+            <ul style="color:white;">
+                <li>First Digit - Scene Type
+                    <ul>
+                        <li>0 - Home </li>
+                        <li>1 - Home </li>
+                    </ul>
+                 </li>
+
+            </ul>
+
+            </p>
+-->
+        </div>
+
       </div>
-			<div class = "jumbotron" id = "panel4">
+			<div class = "jumbotron" id = "panel3">
 				<ul class="nav nav-tabs">
-	<li class="nav-item">
+<!--	<li class="nav-item">
 		<a class="nav-link" onclick="changePanel(1)">Our Data</a>
+	</li> -->
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(1)">What We Have</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" onclick="changePanel(2)">What We Have</a>
+		<a class="nav-link" onclick="changePanel(2)">Formats</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" onclick="changePanel(3)">Annotation</a>
+		<a class="nav-link active" onclick="changePanel(3)">Main Data Download</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link active" onclick="changePanel(4)">Downloads</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" onclick="changePanel(5)">Instances</a>
+		<a class="nav-link" onclick="changePanel(4)">Instances</a>
 	</li>
 	</ul>
 
@@ -260,24 +425,22 @@
 			<h2 class="cardheader" id="download">Download Our Data</h2>
 			<p>
 				Here you can download our entire dataset, excluding the few scans we have held
-				our for testing purposes. To test against these scans....
-				To reduce the download size, we have broken up the dataset into a few .tar files:
+				our for testing purposes. If you don't want to download everything,
+                 checkout our<strong> example scene below.</strong> 
+                An evaluation server will be online in the future.
+				To reduce the download size, we have broken up the dataset into a few .tar files.
+                Check out the <strong> instances tab</strong> to see examples of our instances,
+                and download some images of them.
 				<br/>
 
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-				<div class="btn-group mr-2" role="group" aria-label="First group">
-					<a class = "btn btn-elegant" href="instance_id_map.txt">Instance names/ids</a>
-				</div>
-				 <div class="btn-group mr-2" role="group" aria-label="Second group">
+				 <div class="btn-group mr-2" role="group" aria-label="First group">
 					<a class = "btn btn-elegant" href="">Part 1</a>
 
 					<a class = "btn btn-elegant" href="">Part 2</a>
-
-					<a class = "btn btn-elegant" href="">Part 3</a>
-
-					<a class = "btn btn-elegant" href="">Part 4</a>
-
-					<a class = "btn btn-elegant" href="">Part 5</a>
+				</div>
+				<div class="btn-group mr-2" role="group" aria-label="Second group">
+					<a class = "btn btn-elegant" href="instance_id_map.txt" target="_blank">Instance names/ids</a>
 				</div>
 			</div>
 			</p>
@@ -291,28 +454,28 @@
         Note: This scan is also included in our full dataset.
         <br/>
         <br/>
-        <a class = "btn btn-elegant" href="https://drive.google.com/uc?export-download&id=0B8zhxvoYK3WTQThfRTBTWWp0UTQ">
+        <a class = "btn btn-elegant" href="https://drive.google.com/uc?export=download&id=0B8zhxvoYK3WTQThfRTBTWWp0UTQ" target="_blank">
         Example scan</a>
 
 			</p>
 
 </div>
-      <div class="jumbotron" id = "panel5">
+      <div class="jumbotron" id = "panel4">
 				<ul class="nav nav-tabs">
-  <li class="nav-item">
+<!--  <li class="nav-item">
     <a class="nav-link" onclick="changePanel(1)">Our Data</a>
+  </li> -->
+  <li class="nav-item">
+    <a class="nav-link" onclick="changePanel(1)">What We Have</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" onclick="changePanel(2)">What We Have</a>
+    <a class="nav-link" onclick="changePanel(2)">Formats</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" onclick="changePanel(3)">Annotation</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" onclick="changePanel(4)">Downloads</a>
+    <a class="nav-link" onclick="changePanel(3)">Main Data Download</a>
   </li>
 	<li class="nav-item">
-		<a class="nav-link active" onclick="changePanel(5)">Instances</a>
+		<a class="nav-link active" onclick="changePanel(4)">Instances</a>
 	</li>
 </ul>
 			<h2 class="cardheader">Description of common instances</h2>
@@ -323,20 +486,20 @@
         Each also instance also has an integer id for labeling in the text file.
         <br/>
         <br/>
-        <a class = "btn btn-elegant" href="instance_id_map.txt">Instance names/ids</a>
+        <a class = "btn btn-elegant" href="instance_id_map.txt" target="_blank">Instance names/ids</a>
         <br/>
         <a class = "btn btn-elegant" href="">Instance images</a>
       </p>
 
 			<div id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="card">
+<!--  <div class="card">
     <div class="card-header" role="tab" id="headingOne">
       <h5 class="mb-0">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           Slideshow of Images
         </a>
       </h5>
-    </div>
+    </div> 
 				<div class="w3-content collapse" id = "collapseOne" role = "tabpanel" aria-labelledby = "headingOne" style="width:290px;">
 
 
@@ -516,11 +679,13 @@
 </div>
 </div>
 
+-->
+
 <div class="card">
     <div class="card-header" role="tab" id="headingTwo">
       <h5 class="mb-0">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Grid View
+          Click here to view instances
         </a>
       </h5>
     </div>

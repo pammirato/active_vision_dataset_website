@@ -1,0 +1,6 @@
+@inproceedings{active-vision-dataset2017,
+    author = {Ammirato,  Phil and Poirson, Patrick and Park, Eunbyung and Kosecka, Jana  and Berg, Alexander C.},
+    title = {A Dataset for Developing and Benchmarking Active Vision},
+    booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
+    year={2017},
+}
