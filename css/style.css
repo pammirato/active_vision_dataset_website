@@ -98,6 +98,7 @@ html{
 #overviewcard{
 	background-color: #e2e2e2;
 	text-align: center;
+    height:400px
 }
 .homecards{
 	display:inline-block;
@@ -110,6 +111,11 @@ html{
 .card{
 	margin-bottom: 0px !important;
 }
+/*.big_bird_single{
+  width: 152px !important;
+  height: 200px !important;
+	margin: 5px !important;
+}*/
 .big_bird_single{
   width: 152px !important;
   height: 200px !important;
@@ -237,7 +243,7 @@ p a:hover {
 }
 .testimonial {
 	float: right;
-	width: 260px;
+	width: 360px;
 	margin-left: 20px;
 	padding: 24px 20px;
 }

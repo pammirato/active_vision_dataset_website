@@ -35,7 +35,7 @@
 					<a class = "nav-link" href="get_data.html">Get Data</a>
 				</li>
 				<li class="nav-item">
-					<a class = "nav-link" href="in_construction.html">Visualize Data</a>
+					<a class = "nav-link" href="visualize_data.html">Visualize Data</a>
 
 				</li>
 
@@ -46,7 +46,7 @@
 					<a class = "nav-link" href="people.html">People</a>
 				</li>
 				<li class="nav-item">
-					<a class = "nav-link" href="in_construction.html">Contact</a>
+					<a class = "nav-link" href="contact.html">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -115,8 +115,13 @@
 <li class="nav-item">
 <a class="nav-link" onclick="changePanel(4)">Instances</a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" onclick="changePanel(5)">Experiments</a>
+</li>
 </ul>
-			<h2 class = "cardheader">What We Have </h2>
+	<!--		<h2 class = "cardheader">What We Have </h2> -->
+    <br/>
+    <br/>
 			<p>
         Our dataset aims to allow simulation of robotic motion through
         an environment for object detection. We collect data in many
@@ -147,10 +152,7 @@
             Currently we label 33 unique instances in our scenes. More info about these
             instances can be found in the instances tab above.
         </p>
-
-    
         
-        <br/>
         <br/>
         <strong> When you download our dataset
         you will receive: </strong> </p>
@@ -181,7 +183,13 @@
 							<li class = "list-group-item"> <strong>image_structs.mat:</strong> Holds data including reconstructed camera position for each image. 
 							Used in some of our visualizations</li>
 							<li class = "list-group-item"> <strong>present_instance_names.txt</strong> List of all the instances in the scene, using their names from BigBIRD. 
-							Used in some of our visualizations</li>
+							</li>
+							<li class = "list-group-item"> <strong>special_note.txt</strong>  
+		 In some scenes an instance may appear twice,
+         but never twice in the same image. These scenes
+         include this file to indicate which instances
+         appear twice. The scenes are Home_006_1, 
+         Office_001_1 as of this writing. 			</li>
 						</ul>
 
 				</div>
@@ -232,15 +240,18 @@
 	<li class="nav-item">
 		<a class="nav-link" onclick="changePanel(4)">Instances</a>
 	</li>
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(5)">Experiments</a>
+	</li>
 </ul>
 
      <br/>
      <br/>
      <p> Here we define our format for:
         <ul>
-            <li> bounding boxes</li> 
-            <li> annotation files</li>
-            <li> image names </li>
+            <li> -Bounding boxes</li> 
+            <li> -Annotation files</li>
+            <li> -Image names </li>
         </ul>
      </p>
 
@@ -255,12 +266,13 @@
 
 
         <pre style= "color:white; ">
-Each bounding box has 6 numbers:
+Each bounding box has 6 numbers: 
+[xmin ymin xmax ymax instance_id difficulty]
 
 1. xmin - minimum x value of bounding box
 2. ymin - minimum y value of bounding box
 3. xmax - maximum x value of bounding box
-4. xmax - maximum y value of bounding box
+4. ymax - maximum y value of bounding box
 5. instance_id - numeric id of the instance that is labeled
 6. difficulty - a measure of how difficult the box 
                 may be for a computer to replicate
@@ -289,6 +301,12 @@ Ex)  A box that is 250x80 has difficulty 2.
      A box that is 250x60 has difficulty 3.
      A box that is 60x250 has difficulty 3.
 
+
+**We do not gurantee the presence of boxes smaller than 50x30.
+ That is, if an object's true box is &lt 50x30,
+ then we may not have labeled that box. Many of these boxes
+ are labeled, however, and any box that is labeled contains 
+ the object.
         </pre>
 
 	</div>
@@ -340,8 +358,8 @@ Ex)  A box that is 250x80 has difficulty 2.
 
 
         <pre style= "color:white; ">
-Each image has a unique name.
-Our image names have 15 digits, followed by the file extension(.jpg/.png).
+***Each image has a unique name.***
+Our image names have 15 digits, followed by the file extension(.jpg or .png).
 
 Example: 000120001620101.jpg 
 
@@ -419,6 +437,9 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 	<li class="nav-item">
 		<a class="nav-link" onclick="changePanel(4)">Instances</a>
 	</li>
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(5)">Experiments</a>
+	</li>
 	</ul>
 
 
@@ -435,9 +456,9 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 				 <div class="btn-group mr-2" role="group" aria-label="First group">
-					<a class = "btn btn-elegant" href="">Part 1</a>
+					<a class = "btn btn-elegant" href="https://docs.google.com/a/cs.unc.edu/uc?id=0B8zhxvoYK3WTS2ZCNHFJNHBla28&export=download" target="_blank">Part 1 (9 GB)</a>
 
-					<a class = "btn btn-elegant" href="">Part 2</a>
+					<a class = "btn btn-elegant" href="https://docs.google.com/a/cs.unc.edu/uc?id=0B8zhxvoYK3WTcksxenlTSFNmZ1k&export=download" target="_blank">Part 2 (6 GB)</a> 
 				</div>
 				<div class="btn-group mr-2" role="group" aria-label="Second group">
 					<a class = "btn btn-elegant" href="instance_id_map.txt" target="_blank">Instance names/ids</a>
@@ -445,7 +466,7 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 			</div>
 			</p>
 
-			<h2 class = "cardheader">Example Scene</h2>
+			<h2 class = "cardheader">Example Scene (1.2GB)</h2>
 			<p>
         Instead of downloading our entire dataset you can get an idea of
         what our images look like, our label format, and a general sense of
@@ -454,7 +475,7 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
         Note: This scan is also included in our full dataset.
         <br/>
         <br/>
-        <a class = "btn btn-elegant" href="https://drive.google.com/uc?export=download&id=0B8zhxvoYK3WTQThfRTBTWWp0UTQ" target="_blank">
+        <a class = "btn btn-elegant" href="https://docs.google.com/a/cs.unc.edu/uc?id=0B8zhxvoYK3WTUGRwYjQ0OVNCNHc&export=download" target="_blank">
         Example scan</a>
 
 			</p>
@@ -477,18 +498,41 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 	<li class="nav-item">
 		<a class="nav-link active" onclick="changePanel(4)">Instances</a>
 	</li>
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(5)">Experiments</a>
+	</li>
 </ul>
 			<h2 class="cardheader">Description of common instances</h2>
       <p>
-        We capture and label 33 BigBIRD instances throughout our scenes.
-        Below are links for a text file with a list of the instances using
-        the names given in the BigBIRD data and an image of each instance.
-        Each also instance also has an integer id for labeling in the text file.
+        We place a subset of our 33 common instances in each scene.
+        When we can, we ask the owner of the home to place the objects
+        in naturual places, to avoid any bias in object placement.
+        <br/>
+        We chose our instance based on instances in the
+        <a href="http://rll.berkeley.edu/bigbird/">BigBIRD</a> dataset,
+        but not all of our instances are exact matches. 
+        <br/>
+         Below we provide:
+            <ul>
+        <li> -A list of all the instances we include, 
+         named as they are in BigBIRD, with their id
+            that is used in annotations.
+            (Raw text opens in new tab) </li>
+        <li> -A download with 10 images of each instance
+             (not BigBIRD images) 
+          </li>
+        <li> -A view of each instance as it appears in BigBIRD 
+          </li>
+            </ul>
+         
+        
+                    
+
         <br/>
         <br/>
         <a class = "btn btn-elegant" href="instance_id_map.txt" target="_blank">Instance names/ids</a>
         <br/>
-        <a class = "btn btn-elegant" href="">Instance images</a>
+        <a class = "btn btn-elegant" href="">Instance images(not yet available)</a>
       </p>
 
 			<div id="accordion" role="tablist" aria-multiselectable="true">
@@ -679,9 +723,9 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 </div>
 </div>
 
--->
 
-<div class="card">
+
+<!-- <div class="card">
     <div class="card-header" role="tab" id="headingTwo">
       <h5 class="mb-0">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -691,13 +735,23 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
     </div>
     <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="card-block">
-				<table>
+-->
+				<table style="">
 	<tr>
 		<td><img src="images/advil_liqui_gels.jpg" class="big_bird_single"></td>
 		<td><img src="images/aunt_jemima_original_syrup.jpg" class="big_bird_single"></td>
 		<td><img src="images/bumblebee_albacore.jpg" class="big_bird_single"></td>
 		<td><img src="images/cholula_chipotle_hot_sauce.jpg" class="big_bird_single"></td>
 		<td><img src="images/coca_cola_glass_bottle.jpg" class="big_bird_single"></td>
+    </tr>
+	<tr>
+		<td>advil_liqui_gels</td>
+		<td>aunt_jemima_origin<br/>al_syrup</td>
+		<td>bumblebee_albacore</td>
+		<td>cholula_chipotle_h<br/>ot_sauce</td>
+		<td>coca_cola_glass_bo<br/>ttle</td>
+    </tr>
+    <tr>
 		<td><img src="images/crest_complete_minty_fresh.jpg" class="big_bird_single"></td>
 		<td><img src="images/crystal_hot_sauce.jpg" class="big_bird_single"></td>
 		<td><img src="images/expo_marker_red.jpg" class="big_bird_single"></td>
@@ -705,12 +759,6 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 		<td><img src="images/honey_bunches_of_oats_honey_roasted.jpg" class="big_bird_single"></td>
 
 	</tr>
-	<tr>
-		<td>advil_liqui_gels</td>
-		<td>aunt_jemima_origin<br/>al_syrup</td>
-		<td>bumblebee_albacore</td>
-		<td>cholula_chipotle_h<br/>ot_sauce</td>
-		<td>coca_cola_glass_bo<br/>ttle</td>
 		<td>crest_complete_min<br/>ty_fresh</td>
 		<td>crystal_hot_sauce</td>
 		<td>expo_marker_red</td>
@@ -731,6 +779,16 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 		<td><img src="images/listerine_green.jpg" class="big_bird_single"></td>
 		<td><img src="images/mahatma_rice.jpg" class="big_bird_single"></td>
 		<td><img src="images/nature_valley_granola_thins_dark_chocolate.jpg" class="big_bird_single"></td>
+    </tr>
+
+	<tr>
+		<td>honey_bunches_of_o<br/>ats_with_almonds</td>
+		<td>hunts_sauce</td>
+		<td>listerine_green</td>
+		<td>mahatma_rice</td>
+		<td>nature_valley_gran<br/>ola_thins_dark_chocolate</td>
+    </tr>
+    <tr>
 		<td><img src="images/nature_valley_sweet_and_salty_nut_almond.jpg" class="big_bird_single"></td>
 		<td><img src="images/nature_valley_sweet_and_salty_nut_cashew.jpg" class="big_bird_single"></td>
 		<td><img src="images/nature_valley_sweet_and_salty_nut_peanut.jpg" class="big_bird_single"></td>
@@ -738,12 +796,7 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 		<td><img src="images/nutrigrain_harvest_blueberry_bliss.jpg" class="big_bird_single"></td>
 
 	</tr>
-	<tr>
-		<td>honey_bunches_of_o<br/>ats_with_almonds</td>
-		<td>hunts_sauce</td>
-		<td>listerine_green</td>
-		<td>mahatma_rice</td>
-		<td>nature_valley_gran<br/>ola_thins_dark_chocolate</td>
+    <tr>
 		<td>nature_valley_swee<br/>t_and_salty_nut_<br/>almond</td>
 		<td>nature_valley_swee<br/>t_and_salty_nut_<br/>cashew</td>
 		<td>nature_valley_swee<br/>t_and_salty_nut_<br/>peanut</td>
@@ -757,18 +810,24 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 		<td><img src="images/pringles_bbq.jpg" class="big_bird_single"></td>
 		<td><img src="images/progresso_new_england_clam_chowder.jpg" class="big_bird_single"></td>
 		<td><img src="images/quaker_chewy_low_fat_chocolate_chunk.jpg" class="big_bird_single"></td>
-		<td><img src="images/red_bull.jpg" class="big_bird_single"></td>
-		<td><img src="images/red_cup.jpg" class="big_bird_single"></td>
-		<td><img src="images/softsoap_clear.jpg" class="big_bird_single"></td>
-		<td><img src="images/softsoap_gold.jpg" class="big_bird_single"></td>
-		<td><img src="images/softsoap_white.jpg" class="big_bird_single"></td>
-	</tr>
+        </tr>
+
 	<tr>
 		<td>paper_plate</td>
 		<td>pepto_bismol</td>
 		<td>pringles_bbq</td>
 		<td>progresso_new_engl<br/>and_clam_chowder</td>
 		<td>quaker_chewy_low_f<br/>at_chocolate_chunk</td>
+
+     </tr>
+        <tr>
+		<td><img src="images/red_bull.jpg" class="big_bird_single"></td>
+		<td><img src="images/red_cup.jpg" class="big_bird_single"></td>
+		<td><img src="images/softsoap_clear.jpg" class="big_bird_single"></td>
+		<td><img src="images/softsoap_gold.jpg" class="big_bird_single"></td>
+		<td><img src="images/softsoap_white.jpg" class="big_bird_single"></td>
+	</tr>
+    <tr>
 		<td>red_bull</td>
 		<td>red_cup</td>
 		<td>softsoap_clear</td>
@@ -785,9 +844,9 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 		<td>tapatio_hot_sauce</td>
 		<td>vo5_tea_therapy_he<br/>althful_green_tea_<br/>smoothing_shampoo</td>
 	</tr></table>
-				</div>
+<!--				</div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 
@@ -799,6 +858,118 @@ Home, Scene 1, Scan 2, Image 162, Camera 1, RGB image
 
 
 	</div>
+
+      </div>
+			<div class = "jumbotron" id = "panel5">
+				<ul class="nav nav-tabs">
+<!--	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(1)">Our Data</a>
+	</li> -->
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(1)">What We Have</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(2)">Formats</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(3)">Main Data Download</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" onclick="changePanel(4)">Instances</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link active" onclick="changePanel(5)">Experiments</a>
+	</li>
+	</ul>
+
+
+			<h2 class="cardheader" id="experiments">Experiments</h2>
+			<p>
+                Here we provide access to code to replicate the experiments in
+                our original paper.
+			</p>
+
+                <br/>
+                <br/>
+                <br/>
+
+            <h3> Instance Detection </h3>
+            <p>
+                <a href="https://github.com/patrickpoirson/avd_detection" target="_blank" class="blue-text">Github</a>
+            </p>
+                <br/>
+                <br/>
+ 
+            <h3> Active Vision </h3>
+            <p>
+                <a href="https://github.com/silverbottlep/deep_active_vision" target="_blank"class="blue-text">Github</a>
+            </p> 
+
+            <p> 
+                Here are the test/train splits we use in our experiments
+               <br/>
+               <br/>
+               <table>
+                  <tr>
+                      <td>
+                       <strong>  Train 1 </strong> 
+                      </td>
+                      <td>
+                        <strong>  Test 1 </strong>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>
+                         Home_002_1, Home_003_1, Home_003_2, Home_004_1, Home_004_2, Home_005_1, Home_005_2, Home_006_1,  Home_014_1, Home_014_2, Office_001_1 
+                      </td>
+                      <td>
+ Home_001_1, Home_001_2, Home_008_1                          
+                      </td>
+                
+                  </tr>
+                  <tr>
+                      <td>
+                         <strong> Train 2 </strong>
+                      </td>
+                      <td>
+                         <strong> Test 2 </strong>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>
+Home_001_1, Home_001_2, Home_002_1, Home_004_1, Home_004_2, Home_005_1, Home_005_2, Home_006_1,  Home_008_1, Home_014_1, Home_014_2,
+                      </td>
+                      <td>
+ Home_003_1, Home_003_2,  Office_001_1
+                      </td>
+                
+                  </tr>
+                  <tr>
+                      <td>
+                         <strong> Train 2 </strong>
+                      </td>
+                      <td>
+                         <strong> Test 3 </strong>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>
+ Home_001_1, Home_001_2,  Home_003_1, Home_003_2, Home_004_1, Home_004_2, Home_005_1, Home_005_2, Home_006_1,  Home_008_1, Office_001_1
+                      </td>
+                      <td>
+ Home_014_1, Home_014_2, Home_002_1
+                      </td>
+                
+                  </tr>
+               </table>
+                
+                
+            </p>
+
+
+</div>
+
+
 	<script src = "js/slideshow.js"></script>
 </body>
 </html>
